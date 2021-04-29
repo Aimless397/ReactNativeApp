@@ -1,6 +1,7 @@
 import React from 'react'
 import {SafeAreaView, View } from 'react-native'
-import { PositionScreen } from './src/screens/PositionScreen'
+import { FlexScreen } from './src/screens/FlexScreen'
+/* import { PositionScreen } from './src/screens/PositionScreen' */
 /* import { DimensionesScreen } from './src/screens/DimensionesScreen' */
 /* import { BoxObjectModelScreen } from './src/screens/BoxObjectModelScreen' */
 /* import { ContadorScreen } from './src/screens/ContadorScreen' */
@@ -13,7 +14,9 @@ export const App = () => {
       {/* <ContadorScreen /> */}
       {/* <BoxObjectModelScreen /> */}
       {/* <DimensionesScreen /> */}
-      <PositionScreen />
+      {/* <PositionScreen /> */}
+      <FlexScreen />
+
     </SafeAreaView>
     
   )
