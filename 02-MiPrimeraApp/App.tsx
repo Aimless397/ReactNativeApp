@@ -10,7 +10,7 @@ import { ContadorScreen } from './src/screens/ContadorScreen'
 export const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      {/* <HolaMundoScreen /> */}
+      {/* <HolaMundoScreen />    */}
       <ContadorScreen/>
       {/* <BoxObjectModelScreen /> */}
       {/* <DimensionesScreen /> */}
