@@ -15,9 +15,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
 
-  return Platform.OS === 'ios'
+  return <TabsAndroid />
+  /* return Platform.OS === 'ios'
     ? <TabsIOS />
-    : <TabsAndroid />
+    : <TabsAndroid /> */
+
 }
 
 
@@ -31,7 +33,7 @@ const TabsAndroid = () => {
         backgroundColor: colores.primary
       }}
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ color }) => {
+        tabBarIcon: ({ color, focused }) => {
 
           let iconName: string = '';
           switch (route.name) {
@@ -54,7 +56,7 @@ const TabsAndroid = () => {
 
     >
       <BottomTabAndroid.Screen name="Tab1Screen" options={{ title: 'Tab1' }} component={Tab1Screen} />
-      <BottomTabAndroid.Screen name="TopTabNavigator" options={{ title: 'Tab2' }} component={TopTabNavigator} />
+      <BottomTabAndroid.Screen name="Tab2Screen" options={{ title: 'Tab2' }} component={TopTabNavigator} />
       <BottomTabAndroid.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
     </BottomTabAndroid.Navigator>
   );
