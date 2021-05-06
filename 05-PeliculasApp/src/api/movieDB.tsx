@@ -6,6 +6,6 @@ const movieDB = axios.create({
     api_key: 'de46e93d76ed5abecab169e8b2143d1f',
     language: 'es-ES'
   }
-});
+});   /* Realiza la consulta a la API usando Axios y pasándole la base de la URL */
 
 export default movieDB;
