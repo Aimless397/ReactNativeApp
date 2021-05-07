@@ -13,9 +13,7 @@ const { height: screenHeight } = Dimensions.get('screen');
 
 
 /* Se necesita que las propiedades tengan la navegación, información de la ruta y argumentos */
-interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {
-
-}
+interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> { }
 
 export const DetailScreen = ({ route, navigation }: Props) => {
 
@@ -33,6 +31,7 @@ export const DetailScreen = ({ route, navigation }: Props) => {
 
     <ScrollView>
       <View style={styles.imageContainer}>
+        {/* Carga de la portada de la película */}
         <View style={styles.imageBorder}>
           <Image
             source={{ uri }}
@@ -41,6 +40,7 @@ export const DetailScreen = ({ route, navigation }: Props) => {
         </View>
       </View>
 
+      {/* Carga del título y subtítulo de la película */}
       <View style={styles.marginContainer}>
         <Text style={styles.subTitle}>{movie.original_title}</Text>
         <Text style={styles.title}>{movie.title}</Text>

@@ -19,14 +19,17 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
       <View style={{ marginHorizontal: 20 }}>
 
         <View style={{ flexDirection: 'row' }}>
+          {/* Muestra un ícono de estrella */}
           <Icon
             name="star-outline"
             color="grey"
             size={16}
           />
 
+          {/* Muestra el promedio de valoración de la película */}
           <Text> {movieFull.vote_average}</Text>
 
+          {/* Muestra los géneros de la película de tipo arreglo unidos y separados por coma */}
           <Text style={{ marginLeft: 5 }}>
             - {movieFull.genres.map(g => g.name).join(', ')}
           </Text>
@@ -37,17 +40,16 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
         <Text style={{ fontSize: 23, marginTop: 10, fontWeight: 'bold' }}>
           Historia
         </Text>
-
         <Text style={{ fontSize: 16 }}>
           {movieFull.overview}
         </Text>
 
+        {/* Presupuesto de la Película */}
         <Text style={{ fontSize: 23, marginTop: 10, fontWeight: 'bold' }}>
           Presupuesto
         </Text>
-
         <Text style={{ fontSize: 18 }}>
-          {currencyFormatter.format(movieFull.budget, { code: 'USD' })}
+          {currencyFormatter.format(movieFull.budget, { code: 'USD' })}   {/* Formatear el budget a dólares */}
         </Text>
 
       </View>
@@ -59,11 +61,11 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
         </Text>
 
         <FlatList
-          data={cast}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <CastItem actor={item} />}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
+          data={cast}   /* Toma todos los actores en la propiedad data */
+          keyExtractor={(item) => item.id.toString()}   /* Toma como identificador único para el elemento del FlatList el id del elemento del cast, o sea, el actor.id como cadena */
+          renderItem={({ item }) => <CastItem actor={item} />}    /* Toma un item de la data y lo pasa como parámetro de actor al componente CastItem para renderizarlo */
+          horizontal={true}   /* Propiedad que permite que el FlatList sea horizontal */
+          showsHorizontalScrollIndicator={false}    /* Oculta el scroll horizontal */
           style={{ marginTop: 10, height: 70 }}
         />
 

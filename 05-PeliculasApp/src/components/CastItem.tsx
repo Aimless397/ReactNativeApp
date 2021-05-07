@@ -9,11 +9,13 @@ interface Props {
 
 export const CastItem = ({ actor }: Props) => {
 
-  const uri = `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+  const uri = `https://image.tmdb.org/t/p/w500${actor.profile_path}`    /* Link personalizado que recibe el parámetro de profile_path que contiene la foto del actor a cargar */
 
   return (
+    /* Retorna la tarjeta del actor con su imagen, su nombre y personaje */
     <View style={styles.container}>
       {
+        /* Si existe el profile_path, mostrar su imagen */
         actor.profile_path && (
           <Image
             source={{ uri }}
@@ -22,7 +24,7 @@ export const CastItem = ({ actor }: Props) => {
         )
       }
 
-
+      {/* Muestra la información del actor, como su nombre y personaje */}
       <View style={styles.actorInfo}>
         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
           {actor.name}

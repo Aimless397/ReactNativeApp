@@ -24,6 +24,7 @@ export const Navigation = () => {
 
       }}
     >
+      {/* Se crean los stacks que tienen el nombre del stack a cargar y el componente que utilizarán */}
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="DetailScreen" component={DetailScreen} />
     </Stack.Navigator>

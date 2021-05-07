@@ -14,15 +14,16 @@ interface Props {
 export const MoviePoster = ({ movie, height = 420, width = 300 }: Props) => {
 
 
-  const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+  const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`   /* Link personalizado que recibe el parámetro de poster_path que contiene la imagen de portada a cargar */
 
   /* console.log(movie.poster_path); */
 
-  const navigation = useNavigation();
+  const navigation = useNavigation();   /* constante que permite utiliza el método navigate */
 
 
 
   return (
+    /* El TouchableOpacity envuelve a la portada de la película, convirtiéndola en botón */
     <TouchableOpacity
       onPress={() => navigation.navigate('DetailScreen', movie)}   /* DetailScreen es el name definido en la navegación */
       activeOpacity={0.8}
@@ -34,13 +35,13 @@ export const MoviePoster = ({ movie, height = 420, width = 300 }: Props) => {
         paddingHorizontal: 7,
       }}
     >
+      {/* El View envuelve a la imagen que se mostrará como poster */}
       <View style={styles.imageContainer}>
         <Image
           source={{ uri }}
           style={styles.image}
         />
       </View>
-
 
     </TouchableOpacity>
   )
